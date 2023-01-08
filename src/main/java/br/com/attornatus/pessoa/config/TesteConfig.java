@@ -42,10 +42,10 @@ public class TesteConfig implements CommandLineRunner {
 
         pessoaRepositorio.saveAll(Arrays.asList(p1, p2, p3));
 
-        // ed1.getPessoas().add(p2);
-        // ed2.getPessoas().add(p1);
-        // ed3.getPessoas().add(p3);
+        ed1.getPessoas().add(p2);
+        ed2.getPessoas().add(p1);
+        ed3.getPessoas().add(p3);
 
-        // enderecoRepositorio.saveAll(Arrays.asList(ed1, ed2, ed3));
+        enderecoRepositorio.saveAll(Arrays.asList(ed1, ed2, ed3));
     }
 }
