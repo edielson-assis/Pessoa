@@ -44,7 +44,7 @@ A finalidade do projeto é construir uma API Rest para realizar o cadastro de pe
 
 ## 🔖 Modelo Conceitual
 
-![Pessoa](https://user-images.githubusercontent.com/105529988/211218292-adc3f84d-703f-4086-83a9-a13fb23fe6c1.png)
+![Pessoa](https://user-images.githubusercontent.com/105529988/212369843-3c1964aa-052e-403a-8860-a5e3984a6419.png)
 
 ## :memo: Licença
 
