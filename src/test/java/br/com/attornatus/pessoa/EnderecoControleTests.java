@@ -35,13 +35,13 @@ class EnderecoControleTests {
 		this.mockMvc = MockMvcBuilders.standaloneSetup(enderecoControle).build();
 	}
 
-	// Este teste ele vai solicitar a URL e vai esperar um retorno de sucesso
+	// Este teste vai solicitar a URL e vai esperar um retorno de sucesso
 	@Test
 	public void deveListarOsEnderecosERetornarStatus_200() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/enderecos")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
-	// Este teste ele vai retornar uma Endereco pelo ID e vai esperar um retorno de sucesso
+	// Este teste vai retornar uma Endereco pelo ID e vai esperar um retorno de sucesso
 	@Test
 	public void deveRetornarUmEnderecoPeloIdEStatusOk() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/enderecos/1")).andExpect(MockMvcResultMatchers.status().isOk());

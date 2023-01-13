@@ -33,8 +33,10 @@ public class TesteConfig implements CommandLineRunner {
         Endereco ed1 = new Endereco(null, "Rua Santos Souza", "103", "41555-003",  "Salvador");
         Endereco ed2 = new Endereco(null, "Avenida Otavio Magalhaes", "1007", "41678-023",  "Lauro de Freitas");
         Endereco ed3 = new Endereco(null, "Rua da Independencia", "10113", "40345-108",  "Camacari");
+        Endereco ed4 = new Endereco(null, "Avenida Castro Alves", "115", "40345-551",  "Salvador");
+        Endereco ed5 = new Endereco(null, "Rua Joao Silveira", "77", "40281-108",  "Camacari");
 
-        enderecoRepositorio.saveAll(Arrays.asList(ed1, ed2, ed3));
+        enderecoRepositorio.saveAll(Arrays.asList(ed1, ed2, ed3, ed4, ed5));
 
         Pessoa p1 = new Pessoa(null, "Ana Pink", sdf.parse("23/08/1994"), ed2);
         Pessoa p2 = new Pessoa(null, "Erik Brow", sdf.parse("04/02/2006"), ed1);
@@ -42,10 +44,12 @@ public class TesteConfig implements CommandLineRunner {
 
         pessoaRepositorio.saveAll(Arrays.asList(p1, p2, p3));
 
-        ed1.getPessoas().add(p2);
-        ed2.getPessoas().add(p1);
-        ed3.getPessoas().add(p3);
+        p1.getEnderecos().add(ed2);
+        p1.getEnderecos().add(ed4);
+        p2.getEnderecos().add(ed1);
+        p2.getEnderecos().add(ed5);
+        p3.getEnderecos().add(ed3);
 
-        enderecoRepositorio.saveAll(Arrays.asList(ed1, ed2, ed3));
+        pessoaRepositorio.saveAll(Arrays.asList(p1, p2, p3));
     }
 }

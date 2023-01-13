@@ -39,13 +39,13 @@ class PessoaControleTests {
 		this.mockMvc = MockMvcBuilders.standaloneSetup(pessoaControle).build();
 	}
 
-	// Este teste ele vai solicitar a URL e vai esperar um retorno de sucesso
+	// Este teste vai solicitar a URL e vai esperar um retorno de sucesso
 	@Test
 	public void deveListarAsPessoasERetornarStatus_200() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/pessoas")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
-	// Este teste ele vai retornar uma pessoa pelo ID e vai esperar um retorno de sucesso
+	// Este teste vai retornar uma pessoa pelo ID e vai esperar um retorno de sucesso
 	@Test
 	public void deveRetornarUmaPessoaPeloIdEStatusOk() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/pessoas/1")).andExpect(MockMvcResultMatchers.status().isOk());
