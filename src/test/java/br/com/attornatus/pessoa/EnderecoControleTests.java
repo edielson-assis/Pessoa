@@ -38,13 +38,15 @@ class EnderecoControleTests {
 	// Este teste vai solicitar a URL e vai esperar um retorno de sucesso
 	@Test
 	public void deveListarOsEnderecosERetornarStatus_200() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/enderecos")).andExpect(MockMvcResultMatchers.status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/enderecos"))
+			.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
 	// Este teste vai retornar uma Endereco pelo ID e vai esperar um retorno de sucesso
 	@Test
 	public void deveRetornarUmEnderecoPeloIdEStatusOk() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/enderecos/1")).andExpect(MockMvcResultMatchers.status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/enderecos/1"))
+			.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
 	// Este teste vai retornar 200 e vai esperar um retorno de sucesso
@@ -58,8 +60,12 @@ class EnderecoControleTests {
 	}
 
     // Metodo para instanciar um endereco para testes
-	private Endereco endereco() throws Exception {
-		var endereco = new Endereco(1L, "Rua Santos Souza", "103", "41555-003",  "Salvador");
+	final private Endereco endereco() throws Exception {
+		final var endereco = new Endereco(1L, "Rua Santos Souza", "103", "41555-003",  "Salvador");
 		return endereco;
+	}
+
+	final public Endereco getEndereco() throws Exception {
+		return endereco();
 	}
 }
